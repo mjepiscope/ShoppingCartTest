@@ -1,0 +1,12 @@
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Services/bin/Debug/netcoreapp2.0/GlobalBlue.Services.deps.json
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Services/bin/Debug/netcoreapp2.0/GlobalBlue.Services.dll
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Services/bin/Debug/netcoreapp2.0/GlobalBlue.Services.pdb
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Services/bin/Debug/netcoreapp2.0/GlobalBlue.Data.dll
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Services/bin/Debug/netcoreapp2.0/GlobalBlue.Models.dll
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Services/bin/Debug/netcoreapp2.0/GlobalBlue.Data.pdb
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Services/bin/Debug/netcoreapp2.0/GlobalBlue.Models.pdb
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Services/obj/Debug/netcoreapp2.0/GlobalBlue.Services.csproj.CoreCompileInputs.cache
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Services/obj/Debug/netcoreapp2.0/GlobalBlue.Services.AssemblyInfoInputs.cache
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Services/obj/Debug/netcoreapp2.0/GlobalBlue.Services.AssemblyInfo.cs
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Services/obj/Debug/netcoreapp2.0/GlobalBlue.Services.dll
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Services/obj/Debug/netcoreapp2.0/GlobalBlue.Services.pdb

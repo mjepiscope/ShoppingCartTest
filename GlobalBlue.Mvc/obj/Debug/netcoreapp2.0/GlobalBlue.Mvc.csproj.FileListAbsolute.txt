@@ -1,0 +1,14 @@
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Mvc/bin/Debug/netcoreapp2.0/GlobalBlue.Mvc.deps.json
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Mvc/bin/Debug/netcoreapp2.0/GlobalBlue.Mvc.runtimeconfig.json
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Mvc/bin/Debug/netcoreapp2.0/GlobalBlue.Mvc.runtimeconfig.dev.json
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Mvc/bin/Debug/netcoreapp2.0/GlobalBlue.Mvc.dll
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Mvc/bin/Debug/netcoreapp2.0/GlobalBlue.Mvc.pdb
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Mvc/bin/Debug/netcoreapp2.0/GlobalBlue.Data.dll
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Mvc/bin/Debug/netcoreapp2.0/GlobalBlue.Models.dll
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Mvc/bin/Debug/netcoreapp2.0/GlobalBlue.Data.pdb
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Mvc/bin/Debug/netcoreapp2.0/GlobalBlue.Models.pdb
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Mvc/obj/Debug/netcoreapp2.0/GlobalBlue.Mvc.csproj.CoreCompileInputs.cache
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Mvc/obj/Debug/netcoreapp2.0/GlobalBlue.Mvc.AssemblyInfoInputs.cache
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Mvc/obj/Debug/netcoreapp2.0/GlobalBlue.Mvc.AssemblyInfo.cs
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Mvc/obj/Debug/netcoreapp2.0/GlobalBlue.Mvc.dll
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Mvc/obj/Debug/netcoreapp2.0/GlobalBlue.Mvc.pdb

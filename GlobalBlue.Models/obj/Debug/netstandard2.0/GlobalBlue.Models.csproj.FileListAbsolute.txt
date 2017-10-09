@@ -1,0 +1,8 @@
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Models/bin/Debug/netstandard2.0/GlobalBlue.Models.deps.json
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Models/bin/Debug/netstandard2.0/GlobalBlue.Models.dll
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Models/bin/Debug/netstandard2.0/GlobalBlue.Models.pdb
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Models/obj/Debug/netstandard2.0/GlobalBlue.Models.csproj.CoreCompileInputs.cache
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Models/obj/Debug/netstandard2.0/GlobalBlue.Models.AssemblyInfoInputs.cache
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Models/obj/Debug/netstandard2.0/GlobalBlue.Models.AssemblyInfo.cs
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Models/obj/Debug/netstandard2.0/GlobalBlue.Models.dll
+/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Models/obj/Debug/netstandard2.0/GlobalBlue.Models.pdb
