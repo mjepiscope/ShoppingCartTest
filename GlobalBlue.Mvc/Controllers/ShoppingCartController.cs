@@ -6,16 +6,19 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using GlobalBlue.Data;
 using GlobalBlue.Models;
+using GlobalBlue.Services;
 
 namespace GlobalBlue.Mvc.Controllers
 {
     public class ShoppingCartController : Controller
     {
         private readonly ShoppingCartContext _dbContext;
+        private readonly IShoppingCartValidator _validator;
         
-        public ShoppingCartController(ShoppingCartContext dbContext)
+        public ShoppingCartController(ShoppingCartContext dbContext, IShoppingCartValidator validator)
         {
             _dbContext = dbContext;
+            _validator = validator;
         }
 
         public async Task<IActionResult> Index()
@@ -33,7 +36,7 @@ namespace GlobalBlue.Mvc.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] ShoppingCart request)
         {
-            if (request != null)
+            if (request != null && _validator.IsValid(request))
             {
                 _dbContext.Add(request);
                 await _dbContext.SaveChangesAsync();
@@ -53,8 +56,11 @@ namespace GlobalBlue.Mvc.Controllers
 
             try
             {
-                _dbContext.Update(request);
-                await _dbContext.SaveChangesAsync();
+                if(_validator.IsValid(request))
+                {
+                    _dbContext.Update(request);
+                    await _dbContext.SaveChangesAsync();
+                }
             }
             catch(DbUpdateConcurrencyException ex)
             {

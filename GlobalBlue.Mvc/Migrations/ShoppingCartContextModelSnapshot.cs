@@ -83,12 +83,12 @@ namespace GlobalBlue.Mvc.Migrations
 
             modelBuilder.Entity("GlobalBlue.Models.Item", b =>
                 {
-                    b.Property<int>("ItemId")
+                    b.Property<string>("ItemId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("CartDetailsId");
+                    b.Property<int?>("CartDetailsId");
 
-                    b.Property<int>("Qty");
+                    b.Property<int?>("Qty");
 
                     b.HasKey("ItemId");
 
@@ -177,8 +177,7 @@ namespace GlobalBlue.Mvc.Migrations
                 {
                     b.HasOne("GlobalBlue.Models.CartDetails")
                         .WithMany("Items")
-                        .HasForeignKey("CartDetailsId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("CartDetailsId");
                 });
 
             modelBuilder.Entity("GlobalBlue.Models.OfficeAddress", b =>

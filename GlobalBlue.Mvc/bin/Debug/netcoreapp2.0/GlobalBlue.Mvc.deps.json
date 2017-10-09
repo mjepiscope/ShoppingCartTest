@@ -25,6 +25,7 @@
         "dependencies": {
           "GlobalBlue.Data": "1.0.0",
           "GlobalBlue.Models": "1.0.0",
+          "GlobalBlue.Services": "1.0.0",
           "Microsoft.AspNetCore.All": "2.0.0",
           "Microsoft.NETCore.App": "2.0.0"
         },
@@ -3816,6 +3817,17 @@
           "GlobalBlue.Models.dll": {}
         }
       },
+      "GlobalBlue.Services/1.0.0": {
+        "dependencies": {
+          "GlobalBlue.Data": "1.0.0"
+        },
+        "runtime": {
+          "GlobalBlue.Services.dll": {}
+        },
+        "compile": {
+          "GlobalBlue.Services.dll": {}
+        }
+      },
       "Microsoft.NETCore.App/2.0.0": {
         "dependencies": {
           "Microsoft.NETCore.DotNetHostPolicy": "2.0.0",
@@ -6008,6 +6020,11 @@
       "sha512": ""
     },
     "GlobalBlue.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GlobalBlue.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace GlobalBlue.Mvc.Migrations
 {
-    public partial class Migrations201710090 : Migration
+    public partial class Migrations201710091 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -84,10 +84,9 @@ namespace GlobalBlue.Mvc.Migrations
                 name: "Items",
                 columns: table => new
                 {
-                    ItemId = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    CartDetailsId = table.Column<int>(type: "INTEGER", nullable: false),
-                    Qty = table.Column<int>(type: "INTEGER", nullable: false)
+                    ItemId = table.Column<string>(type: "TEXT", nullable: false),
+                    CartDetailsId = table.Column<int>(type: "INTEGER", nullable: true),
+                    Qty = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -97,7 +96,7 @@ namespace GlobalBlue.Mvc.Migrations
                         column: x => x.CartDetailsId,
                         principalTable: "CartDetails",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(

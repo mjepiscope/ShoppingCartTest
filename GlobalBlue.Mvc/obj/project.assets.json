@@ -4770,6 +4770,19 @@
         "runtime": {
           "bin/placeholder/GlobalBlue.Models.dll": {}
         }
+      },
+      "GlobalBlue.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "GlobalBlue.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GlobalBlue.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GlobalBlue.Services.dll": {}
+        }
       }
     }
   },
@@ -12558,12 +12571,18 @@
       "type": "project",
       "path": "../GlobalBlue.Models/GlobalBlue.Models.csproj",
       "msbuildProject": "../GlobalBlue.Models/GlobalBlue.Models.csproj"
+    },
+    "GlobalBlue.Services/1.0.0": {
+      "type": "project",
+      "path": "../GlobalBlue.Services/GlobalBlue.Services.csproj",
+      "msbuildProject": "../GlobalBlue.Services/GlobalBlue.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "GlobalBlue.Data >= 1.0.0",
       "GlobalBlue.Models >= 1.0.0",
+      "GlobalBlue.Services >= 1.0.0",
       "Microsoft.AspNetCore.All >= 2.0.0",
       "Microsoft.NETCore.App >= 2.0.0"
     ]
@@ -12601,6 +12620,9 @@
             },
             "/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Models/GlobalBlue.Models.csproj": {
               "projectPath": "/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Models/GlobalBlue.Models.csproj"
+            },
+            "/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Services/GlobalBlue.Services.csproj": {
+              "projectPath": "/Users/KaeL/Visual Studio Projects/GlobalBlue/GlobalBlue.Services/GlobalBlue.Services.csproj"
             }
           }
         }

@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using GlobalBlue.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Rewrite;
+using GlobalBlue.Services;
 
 namespace GlobalBlue.Mvc
 {
@@ -37,6 +38,12 @@ namespace GlobalBlue.Mvc
             // {
             //     options.Filters.Add(new RequireHttpsAttribute());
             // });
+
+            // Register own types
+            services.AddTransient<IShoppingCartValidator, ShoppingCartValidator>();
+            services.AddTransient<ICartDetailsValidator, CartDetailsValidator>();
+            services.AddTransient<IShippingDetailsValidator, ShippingDetailsValidator>();
+            services.AddTransient<IAddressValidator, AddressValidator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

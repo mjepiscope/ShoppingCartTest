@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\GlobalBlue.Data\GlobalBlue.Data.csproj" />
     <ProjectReference Include="..\GlobalBlue.Models\GlobalBlue.Models.csproj" />
+    <ProjectReference Include="..\GlobalBlue.Services\GlobalBlue.Services.csproj" />
   </ItemGroup>
 
 </Project>
