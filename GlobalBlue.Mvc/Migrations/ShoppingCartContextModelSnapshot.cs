@@ -83,14 +83,16 @@ namespace GlobalBlue.Mvc.Migrations
 
             modelBuilder.Entity("GlobalBlue.Models.Item", b =>
                 {
-                    b.Property<string>("ItemId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int?>("CartDetailsId");
 
+                    b.Property<string>("ItemId");
+
                     b.Property<int?>("Qty");
 
-                    b.HasKey("ItemId");
+                    b.HasKey("Id");
 
                     b.HasIndex("CartDetailsId");
 

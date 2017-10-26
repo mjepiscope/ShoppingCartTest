@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using GlobalBlue.Data;
 using GlobalBlue.Models;
 using GlobalBlue.Services;
+using GlobalBlue.Mvc.Models;
 
 namespace GlobalBlue.Mvc.Controllers
 {
@@ -21,16 +22,50 @@ namespace GlobalBlue.Mvc.Controllers
             _validator = validator;
         }
 
+        public JsonResult TestConnect()
+        {
+            return new JsonResult("Connection Successful");
+        }
+
         public async Task<IActionResult> Index()
         {
-            var request = await _dbContext.ShoppingCart
+            var shoppingCarts = await _dbContext.ShoppingCart
                 .Include(s => s.CartDetails)
                 .Include(s => s.CartDetails.Items)
                 .Include(s => s.ShippingDetails)
+                .Include(s => s.ShippingDetails.HomeAddress)
+                .Include(s => s.ShippingDetails.OfficeAddress)
                 .Include(s => s.ContactDetails)
                 .ToListAsync();
 
-            return Json(request);
+            var response = new ShoppingCartsResponse();
+            response.ShoppingCarts = shoppingCarts;
+            response.ErrorMessage = shoppingCarts == null || shoppingCarts.Count == 0
+                ? "No records found"
+                : string.Empty;
+
+            return Json(response);
+        }
+
+        public async Task<IActionResult> GetById(int id)
+        {
+            var shoppingCart = await _dbContext.ShoppingCart
+                .Where(s => s.Id == id)
+                .Include(s => s.CartDetails)
+                .Include(s => s.CartDetails.Items)
+                .Include(s => s.ShippingDetails)
+                .Include(s => s.ShippingDetails.HomeAddress)
+                .Include(s => s.ShippingDetails.OfficeAddress)
+                .Include(s => s.ContactDetails)
+                .SingleOrDefaultAsync();
+
+            var response = new ShoppingCartResponse();
+            response.ShoppingCart = shoppingCart;
+            response.ErrorMessage = shoppingCart == null
+                ? "Id not existing"
+                : string.Empty;
+
+            return Json(response);
         }
 
         [HttpPost]
@@ -40,33 +75,37 @@ namespace GlobalBlue.Mvc.Controllers
             {
                 _dbContext.Add(request);
                 await _dbContext.SaveChangesAsync();
-                return Json(request);
+                return Json(true);
             }
 
-            return NotFound();
+            return Json(false);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit([FromBody] ShoppingCart request)
+        public async Task<IActionResult> Edit([FromBody] ShoppingCartUpdateRequest request)
         {
-            if (request == null || request.Id == default(int))
+            if (request == null 
+                || request.ShoppingCart == null 
+                || request.ShoppingCart.Id == default(int))
             {
-                return NotFound();
+                return Json(false);
             }
 
             try
             {
-                if(_validator.IsValid(request))
+                if(_validator.IsValid(request.ShoppingCart))
                 {
-                    _dbContext.Update(request);
+                    UpdateCartDetailItems(request.DeletedItems);
+
+                    _dbContext.Update(request.ShoppingCart);
                     await _dbContext.SaveChangesAsync();
                 }
             }
             catch(DbUpdateConcurrencyException ex)
             {
-                if (_dbContext.ShoppingCart.Any(s => s.Id == request.Id))
+                if (_dbContext.ShoppingCart.Any(s => s.Id == request.ShoppingCart.Id))
                 {
-                    return NotFound();
+                    return Json(false);;
                 }
                 else
                 {
@@ -74,7 +113,7 @@ namespace GlobalBlue.Mvc.Controllers
                 }
             }
 
-            return Json(request);
+            return Json(true);
         }
 
         [HttpPost]
@@ -88,5 +127,14 @@ namespace GlobalBlue.Mvc.Controllers
             return await Index();
         }
 
+        private void UpdateCartDetailItems(List<Item> deletedItems) 
+        {
+            //var items = _dbContext.Items.Where(i => i.CartDetailsId == cartDetails.Id);
+
+            foreach (var item in deletedItems) 
+            {
+                _dbContext.Items.Remove(item);
+            }
+        }
     }
 }

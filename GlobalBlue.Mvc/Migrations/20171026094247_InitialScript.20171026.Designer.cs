@@ -10,8 +10,8 @@ using System;
 namespace GlobalBlue.Mvc.Migrations
 {
     [DbContext(typeof(ShoppingCartContext))]
-    [Migration("20171009070818_Migrations.20171009.1")]
-    partial class Migrations201710091
+    [Migration("20171026094247_InitialScript.20171026")]
+    partial class InitialScript20171026
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -84,14 +84,16 @@ namespace GlobalBlue.Mvc.Migrations
 
             modelBuilder.Entity("GlobalBlue.Models.Item", b =>
                 {
-                    b.Property<string>("ItemId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int?>("CartDetailsId");
 
+                    b.Property<string>("ItemId");
+
                     b.Property<int?>("Qty");
 
-                    b.HasKey("ItemId");
+                    b.HasKey("Id");
 
                     b.HasIndex("CartDetailsId");
 
