@@ -95,7 +95,7 @@ namespace GlobalBlue.Mvc.Controllers
             {
                 if(_validator.IsValid(request.ShoppingCart))
                 {
-                    UpdateCartDetailItems(request.DeletedItems);
+                    RemoveDeletedItems(request.DeletedItems);
 
                     _dbContext.Update(request.ShoppingCart);
                     await _dbContext.SaveChangesAsync();
@@ -119,18 +119,27 @@ namespace GlobalBlue.Mvc.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete([FromBody] int id)
         {
-            var request = _dbContext.ShoppingCart.SingleOrDefaultAsync(s => s.Id == id);
+            var cart = await _dbContext.ShoppingCart
+                .Where(s => s.Id == id)
+                .Include(s => s.CartDetails)
+                .Include(s => s.CartDetails.Items)
+                .Include(s => s.ShippingDetails)
+                .Include(s => s.ShippingDetails.HomeAddress)
+                .Include(s => s.ShippingDetails.OfficeAddress)
+                .Include(s => s.ContactDetails)
+                .SingleOrDefaultAsync();
 
-            _dbContext.Remove(request);
+            if (cart == null)
+                return Json(false);
+
+            _dbContext.Remove(cart);
             await _dbContext.SaveChangesAsync();
 
-            return await Index();
+            return Json(true);
         }
 
-        private void UpdateCartDetailItems(List<Item> deletedItems) 
+        private void RemoveDeletedItems(List<Item> deletedItems) 
         {
-            //var items = _dbContext.Items.Where(i => i.CartDetailsId == cartDetails.Id);
-
             foreach (var item in deletedItems) 
             {
                 _dbContext.Items.Remove(item);
